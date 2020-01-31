@@ -23,6 +23,8 @@ repositories {
 }
 
 dependencies {
+    //compile 'org.springframework.boot:springBoot-starter-data-jpa'
+    compile 'mysql:mysql-connector-java'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.session:spring-session-core'
     compileOnly 'org.projectlombok:lombok'
@@ -31,8 +33,4 @@ dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
-}
-
-test {
-    useJUnitPlatform()
 }
