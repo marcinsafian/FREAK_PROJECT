@@ -1,19 +1,26 @@
 package com.freak.project.client;
 
 import com.freak.project.domain.StationParametersDTO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
-
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static java.util.Optional.ofNullable;
+
 @Component
 public class ApiWheaderClient {
+    private static final Logger LOGGER = LoggerFactory.getLogger(ApiWheaderClient.class);
+
+
     //wstrzykuje beana RestTemplate z CoreConfiguration aby umozliwic wyslanie zapytania HTTP AccuClient
 //    @Autowired
 //    private CoreConfiguration coreConfiguration;
@@ -24,15 +31,22 @@ public class ApiWheaderClient {
 
     @Autowired
     private RestTemplate restTemplate;
-    public List<StationParametersDTO> getStationsURL() {
-        //URI klasa z kilkoma metodami do operowania na adresie https://docs.oracle.com/javase/7/docs/api/java/net/URI.html
-        //restTemplate udostepnia .getForObject
-        URI url = UriComponentsBuilder.fromHttpUrl(apiEndpoint).build().encode().toUri();
-        StationParametersDTO[] responseParametersListDTO = restTemplate.getForObject(url, StationParametersDTO[].class);
 
-        if (responseParametersListDTO != null) {
-            return Arrays.asList(responseParametersListDTO);
+
+    private URI urlBuild(){
+        //URI klasa z kilkoma metodami do operowania na adresie https://docs.oracle.com/javase/7/docs/api/java/net/URI.html
+        return UriComponentsBuilder.fromHttpUrl(apiEndpoint).build().encode().toUri();
+    }
+
+    public List<StationParametersDTO> getStationsURL() {
+
+        //restTemplate udostepnia .getForObject
+        try{
+        StationParametersDTO[] responseParametersListDTO = restTemplate.getForObject(urlBuild(), StationParametersDTO[].class);
+        return Arrays.asList(ofNullable(responseParametersListDTO).orElse(new StationParametersDTO[0]));
+        }catch (RestClientException e){
+            LOGGER.error(e.getMessage(),e);
+            return new ArrayList<>();
         }
-        return new ArrayList<>();
     }
 }
