@@ -6,9 +6,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @NoArgsConstructor
 @Getter
+@Setter
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class StationsDTO {
@@ -45,4 +47,7 @@ public class StationsDTO {
 
     public StationsDTO(String id_stacji, String stacja, String temperatura) {
     }
+
+//    public StationsDTO(String id_stacji, String stacja, String temperatura) {
+//    }
 }

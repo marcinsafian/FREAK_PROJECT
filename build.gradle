@@ -25,4 +25,5 @@ dependencies {
     compile ('mysql:mysql-connector-java') //usuniete dla heroku
     //compile('org.postgresql:postgresql')//dopisane dla heroku
     testCompile ('org.springframework.boot:spring-boot-starter-test')
+    implementation 'org.jetbrains:annotations:15.0'
 }

@@ -1,7 +1,5 @@
 package com.freak.project.controller;
 
-
-import com.freak.project.client.ApiWheaderClient;
 import com.freak.project.domain.Stations;
 import com.freak.project.facade.ApiWheaderFacade;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +15,8 @@ import java.util.List;
 @RequestMapping("/v1/stations")//12500 numer stacji - zmienic pozniej
 public class ApiWheaderController {
 
-    @Autowired
-    private ApiWheaderClient apiWheaderClient;
+//    @Autowired
+//    private ApiWheaderClient apiWheaderClient;
     @Autowired
     private ApiWheaderFacade apiWheaderFacade;
 

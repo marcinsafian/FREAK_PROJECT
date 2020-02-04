@@ -4,9 +4,11 @@ package com.freak.project.domain;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Setter
 @Getter
 public class Stations {
 
@@ -20,8 +22,5 @@ public class Stations {
     private String wilgotnosc_wzgledna;
     private String suma_opadu;
     private String cisnienie;
-
-    public Stations(String id_stacji, String stacja, String temperatura) {
-    }
 
 }
