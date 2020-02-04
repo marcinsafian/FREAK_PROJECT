@@ -1,5 +1,6 @@
 package com.freak.project.domain;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,7 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-public class StationParametersDTO {
+public class Stations {
+
     private String id_stacji;
     private String stacja;
     private String data_pomiaru;
@@ -18,5 +20,8 @@ public class StationParametersDTO {
     private String wilgotnosc_wzgledna;
     private String suma_opadu;
     private String cisnienie;
+
+    public Stations(String id_stacji, String stacja, String temperatura) {
+    }
 
 }
