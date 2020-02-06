@@ -1,11 +1,8 @@
 package com.freak.project.mapper;
 
 
-import com.freak.project.domain.StationIdDto;
 import com.freak.project.domain.Stations;
 import com.freak.project.domain.StationsDTO;
-import com.freak.project.exception.IdNotFoundException;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -32,7 +29,7 @@ public class ApiWheaderMapper {
                         stations1.getCisnienie()))
                 .collect(Collectors.toList());
     }
-//    public StationIdDto mapStationsIdDto (final String id_stacji){
+//    public StationByIdDto mapStationsIdDto (final String id_stacji){
 //        return stations.stream()
 //                .map(stations1 -> new StationsDTO(stations1.getId_stacji(),stations1.getStacja(),stations1.getData_pomiaru(),
 //                        stations1.getGodzina_pomiaru(),stations1.getTemperatura(),

@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class StationIdDto {
+public class StationByIdDto {
 
     @JsonProperty("id_stacji")
     private String id_stacji;

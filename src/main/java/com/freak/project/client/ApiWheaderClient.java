@@ -1,7 +1,8 @@
 package com.freak.project.client;
 
 import com.freak.project.config.UrlConfig;
-import com.freak.project.domain.StationDtoList;
+import com.freak.project.domain.StationByIdDto;
+import com.freak.project.domain.StationByNameDto;
 import com.freak.project.domain.StationsDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +16,6 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 import static java.util.Optional.ofNullable;
 
@@ -55,11 +55,22 @@ public class ApiWheaderClient {
             return new ArrayList<>();
         }
     }
-    public List<StationDtoList> getIdStationsURL() {
-        try {
-            StationDtoList[]response =restTemplate.getForObject(urlBuild(),StationDtoList[].class);
-            return Arrays.asList(ofNullable(response).orElse(new StationDtoList[0]));
-        } catch (RestClientException e) {
+    public List<StationByIdDto> getIdStationsURL() {
+
+        try{
+            StationByIdDto[] stationsResponse = restTemplate.getForObject(urlBuild(), StationByIdDto[].class);
+            return Arrays.asList(ofNullable(stationsResponse).orElse(new StationByIdDto[0]));
+        }catch (RestClientException e){
+            LOGGER.error(e.getMessage(), e);
+            return new ArrayList<>();
+        }
+    }
+    public List<StationByNameDto> getNameStationsURL() {
+
+        try{
+            StationByNameDto[] stationsResponse = restTemplate.getForObject(urlBuild(), StationByNameDto[].class);
+            return Arrays.asList(ofNullable(stationsResponse).orElse(new StationByNameDto[0]));
+        }catch (RestClientException e){
             LOGGER.error(e.getMessage(), e);
             return new ArrayList<>();
         }
