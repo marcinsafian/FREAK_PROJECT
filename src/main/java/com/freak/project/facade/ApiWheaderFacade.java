@@ -1,7 +1,6 @@
 package com.freak.project.facade;
 
 
-import com.freak.project.domain.StationDtoList;
 import com.freak.project.domain.StationsDTO;
 import com.freak.project.mapper.ApiWheaderMapper;
 import com.freak.project.service.ApiWheaderService;
@@ -23,7 +22,7 @@ public class ApiWheaderFacade {
         List<StationsDTO>stations = apiWheaderMapper.mapToStationsDto(apiWheaderService.fetchAllStations());
         return stations;
     }
-    public Optional<StationDtoList> getstationId(Long id_stacji){
-        Optional<StationDtoList> station = Optional.ofNullable(apiWheaderService.fetchById(id_stacji));
+    public Optional<List<StationsDTO>> getstationId(String id_stacji){
+        Optional<List<StationsDTO>> station = Optional.ofNullable(apiWheaderService.fetchById(id_stacji));
     return station;}
 }

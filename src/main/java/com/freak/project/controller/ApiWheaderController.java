@@ -1,6 +1,5 @@
 package com.freak.project.controller;
 
-import com.freak.project.domain.StationDtoList;
 import com.freak.project.domain.StationsDTO;
 import com.freak.project.facade.ApiWheaderFacade;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +24,6 @@ public class ApiWheaderController {
     }
 
     @GetMapping("/{id_stacji}")
-    public Optional<StationDtoList> getStationId(@PathVariable Long id_stacji){return apiWheaderFacade.getstationId(id_stacji);}
+    public Optional<List<StationsDTO>> getStationId(@PathVariable String id_stacji){return apiWheaderFacade.getstationId(id_stacji);}
 
 }
