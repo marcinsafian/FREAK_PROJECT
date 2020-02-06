@@ -22,5 +22,4 @@ public class Stations {
     private String wilgotnosc_wzgledna;
     private String suma_opadu;
     private String cisnienie;
-
 }
