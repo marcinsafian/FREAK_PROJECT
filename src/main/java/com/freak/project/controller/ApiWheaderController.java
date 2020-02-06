@@ -27,11 +27,4 @@ public class ApiWheaderController {
     @GetMapping("/{id_stacji}")
     public Optional<StationDtoList> getStationId(@PathVariable Long id_stacji){return apiWheaderFacade.getstationId(id_stacji);}
 
-
-//
-//    @GetMapping("/{platesNumber}")
-//    public VozillaCarDto getCarByPlatesNumber(@PathVariable String platesNumber)
-//            throws CarNotFoundException {
-//        return vozillaService.getCarByPlatesNumber(platesNumber);
-//    }
 }
