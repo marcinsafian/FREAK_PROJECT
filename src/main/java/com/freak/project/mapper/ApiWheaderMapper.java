@@ -52,10 +52,4 @@ public class ApiWheaderMapper {
                 stationsDTO.getWilgotnosc_wzgledna(),stationsDTO.getSuma_opadu(),
                 stationsDTO.getCisnienie());
     }
-//    public StationsDTO getStationById(String id_stacji) throws IdNotFoundException{
-//        return mapStationsIdDto()
-//                .stream()
-//                .filter(c -> c.getId_stacji().equals(id_stacji))
-//                .findFirst().orElseThrow(IdNotFoundException::new);
-//    }
 }

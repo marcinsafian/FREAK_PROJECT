@@ -3,6 +3,7 @@ package com.freak.project.facade;
 import com.freak.project.domain.StationByIdDto;
 import com.freak.project.domain.StationByNameDto;
 import com.freak.project.domain.StationsDTO;
+import com.freak.project.exception.StationNotFoundException;
 import com.freak.project.mapper.ApiWheaderMapper;
 import com.freak.project.service.ApiWheaderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,11 +24,11 @@ public class ApiWheaderFacade {
         List<StationsDTO>stations = apiWheaderMapper.mapToStationsDto(apiWheaderService.fetchAllStations());
         return stations;
     }
-    public Optional<List<StationByIdDto>> getStationId(String id_stacji){
-        Optional<List<StationByIdDto>> station = Optional.ofNullable(apiWheaderService.fetchById(id_stacji));
+    public List<StationByIdDto> getStationId(String id_stacji) throws StationNotFoundException{
+        List<StationByIdDto> station = apiWheaderService.fetchById(id_stacji);
     return station;}
 
-    public Optional<List<StationByNameDto>> getStationName(String stacja){
-        Optional<List<StationByNameDto>> station = Optional.ofNullable(apiWheaderService.fetchByName(stacja));
+    public List<StationByNameDto> getStationName(String stacja) throws StationNotFoundException {
+        List<StationByNameDto> station = apiWheaderService.fetchByName(stacja);
         return station;}
 }
