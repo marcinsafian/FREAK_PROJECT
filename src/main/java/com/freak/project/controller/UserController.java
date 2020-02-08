@@ -14,6 +14,6 @@ public class UserController {
     private UserService userService;
 
     @PostMapping
-    @ResponseStatus(value = HttpStatus.CREATED, reason ="User added")
+    @ResponseStatus(value = HttpStatus.CREATED, reason ="User_added")
     public void addUser(@RequestBody NewUserDto newUserDto) throws UserExistException{userService.addUser(newUserDto);}
 }

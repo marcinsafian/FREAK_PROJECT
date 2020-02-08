@@ -29,6 +29,5 @@ public class RegistrationLog {
 
     public RegistrationLog(LocalDateTime now, String userName) {
     }
-
 }
 

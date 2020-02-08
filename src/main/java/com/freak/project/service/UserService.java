@@ -26,7 +26,7 @@ public class UserService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserService.class);
 
-    public UserService() {}
+   // public UserService() {}
 
     public Long addUser(NewUserDto dtoNewUser) throws UserExistException {
         if (isUserNameNew(dtoNewUser.getUserName())) {
