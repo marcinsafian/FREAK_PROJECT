@@ -12,11 +12,9 @@ import java.util.List;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/stations")//12500 numer stacji - zmienic pozniej
+@RequestMapping("/stations")
 public class ApiWheaderController {
 
-//    @Autowired
-//    private ApiWheaderClient apiWheaderClient;
     @Autowired
     private ApiWheaderFacade apiWheaderFacade;
 
@@ -25,10 +23,10 @@ public class ApiWheaderController {
         return apiWheaderFacade.fetchAllStations();
     }
 
-    @GetMapping("/{id_stacji}")
+    @GetMapping("/{id_station}")
     public List<StationByIdDto> getStationId(@PathVariable String id_stacji)throws StationNotFoundException {return apiWheaderFacade.getStationId(id_stacji);}
 
-    @GetMapping("/name/{stacja}")
+    @GetMapping("/name/{station}")
     public List<StationByNameDto> getStationName(@PathVariable String stacja) throws StationNotFoundException{return apiWheaderFacade.getStationName(stacja);}
 
 }
