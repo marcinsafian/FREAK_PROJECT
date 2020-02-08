@@ -3,7 +3,6 @@ package com.freak.project.reposytory;
 import com.freak.project.user.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-
 import javax.transaction.Transactional;
 import java.util.Optional;
 

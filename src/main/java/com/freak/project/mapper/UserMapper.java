@@ -9,6 +9,6 @@ public class UserMapper {
 
     public User mapToUser(NewUserDto newUserDto) {
         return new User(newUserDto.getFirstName(), newUserDto.getLastName(),newUserDto.getUserName(),
-                newUserDto.getPassword(), newUserDto.getEmail(), newUserDto.isSchedulerOn());
+                newUserDto.getPassword(),newUserDto.getEmail(), newUserDto.isSchedulerOn());
     }
 }

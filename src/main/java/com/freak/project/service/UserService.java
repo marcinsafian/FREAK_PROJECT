@@ -1,6 +1,5 @@
 package com.freak.project.service;
 
-
 import com.freak.project.exception.UserExistException;
 import com.freak.project.mapper.UserMapper;
 import com.freak.project.reposytory.LogRepository;
@@ -26,7 +25,7 @@ public class UserService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserService.class);
 
-   // public UserService() {}
+    public UserService() {}
 
     public Long addUser(NewUserDto dtoNewUser) throws UserExistException {
         if (isUserNameNew(dtoNewUser.getUserName())) {
