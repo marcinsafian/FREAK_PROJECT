@@ -23,10 +23,10 @@ public class ApiWheaderController {
         return apiWheaderFacade.fetchAllStations();
     }
 
-    @GetMapping("/{id_station}")
+    @GetMapping("/{id_stacji}")
     public List<StationByIdDto> getStationId(@PathVariable String id_stacji)throws StationNotFoundException {return apiWheaderFacade.getStationId(id_stacji);}
 
-    @GetMapping("/name/{station}")
+    @GetMapping("/name/{stacja}")
     public List<StationByNameDto> getStationName(@PathVariable String stacja) throws StationNotFoundException{return apiWheaderFacade.getStationName(stacja);}
 
 }
