@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -42,12 +41,6 @@ public class User {
     @Column(name = "schedulerOn")
     private boolean schedulerOn;
 
-    public User(String firstName, String lastName, String userName, String password, String email, boolean schedulerOn) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.userName = userName;
-        this.password = password;
-        this.email = email;
-        this.schedulerOn = schedulerOn;
-    }
+    public User(String firstName, String lastName, String userName, String password, String email, boolean schedulerOn) {}
+
 }

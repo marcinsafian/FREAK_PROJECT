@@ -11,4 +11,6 @@ public class UserMapper {
         return new User(newUserDto.getFirstName(), newUserDto.getLastName(),newUserDto.getUserName(),
                 newUserDto.getPassword(),newUserDto.getEmail(), newUserDto.isSchedulerOn());
     }
+    public NewUserDto mapToUserDto(User user){return new NewUserDto(user.getFirstName(), user.getLastName(),
+            user.getUserName(),user.getPassword(),user.getEmail(), user.isSchedulerOn());}
 }

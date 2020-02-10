@@ -2,6 +2,7 @@ package com.freak.project.facade;
 
 import com.freak.project.domain.StationByIdDto;
 import com.freak.project.domain.StationByNameDto;
+import com.freak.project.domain.Stations;
 import com.freak.project.domain.StationsDTO;
 import com.freak.project.exception.StationNotFoundException;
 import com.freak.project.mapper.ApiWheaderMapper;
@@ -10,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Optional;
 
 @Component
 public class ApiWheaderFacade {
