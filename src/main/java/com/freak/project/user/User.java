@@ -30,17 +30,22 @@ public class User {
     @Column(name = "userName")
     private String userName;
 
-    @NotNull
     @Column(name = "password")
     private String password;
 
-    @NotNull
     @Column(name = "email")
     private String email;
 
     @Column(name = "schedulerOn")
     private boolean schedulerOn;
 
-    public User(String firstName, String lastName, String userName, String password, String email, boolean schedulerOn) {}
+    public User(String firstName, String lastName, String userName, String password, String email, boolean schedulerOn) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.password = password;
+        this.email = email;
+        this.schedulerOn = schedulerOn;
 
+    }
 }

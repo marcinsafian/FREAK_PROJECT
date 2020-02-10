@@ -9,7 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
@@ -47,4 +46,6 @@ public class WheatherStations {
 
     @Column(name = "cisnienie")
     private String cisnienie;
+
+
 }
