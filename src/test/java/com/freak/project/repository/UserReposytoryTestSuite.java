@@ -2,7 +2,6 @@ package com.freak.project.repository;
 import com.freak.project.exception.UserExistException;
 import com.freak.project.reposytory.UserRepository;
 import com.freak.project.user.User;
-import org.junit.Before;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

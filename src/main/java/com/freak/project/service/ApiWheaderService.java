@@ -2,7 +2,6 @@ package com.freak.project.service;
 
 import com.freak.project.client.ApiWheaderClient;
 import com.freak.project.domain.*;
-import com.freak.project.reposytory.WheatherStationsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
