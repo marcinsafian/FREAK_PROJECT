@@ -1,6 +1,5 @@
 package com.freak.project.statistic;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -8,14 +7,11 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Setter
 @Getter
+@Setter
 @Entity
-@Table(name = "registrationLogs")
-public class RegistrationLog {
-
+@Table
+public class AllUsersCount {
     @Id
     @GeneratedValue
     @Column(name = "id", updatable = false, unique = true)
@@ -24,10 +20,12 @@ public class RegistrationLog {
     @Column(name = "date")
     private LocalDateTime date;
 
-    @Column(name = "username")
-    private String username;
+    @Column(name = "registeredUsers")
+    private int registeredUsers;
 
-    public RegistrationLog(LocalDateTime date, String username) {
+    @Column(name = "emailsSent")
+    private int emailsSent;
+
+    public AllUsersCount(LocalDateTime now, int userCount, int emailCount) {
     }
 }
-

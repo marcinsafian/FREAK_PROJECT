@@ -16,8 +16,8 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping
-    @ResponseStatus(value = HttpStatus.CREATED, reason ="User_added")
+    @PostMapping(value = "/adduser")
+    @ResponseStatus(value = HttpStatus.CREATED, reason ="User added")
     public void addUser(@RequestBody NewUserDto newUserDto) throws UserExistException{userService.addUser(newUserDto);}
 
     @GetMapping

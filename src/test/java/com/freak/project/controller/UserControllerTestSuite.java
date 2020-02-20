@@ -69,12 +69,15 @@ class UserControllerTestSuite {
         String jsonContent = gson.toJson(newUserDto);
 
         //When & Then
-        mockMvc.perform(post("/users")
+        mockMvc.perform(post("/users/adduser")
                 .contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")
                 .content(jsonContent))
                 .andExpect(status().is(201))
                 .andExpect(status().reason("User added"));
     }
+
+    //@Test
+    //void deleteUser(){}
 
 }

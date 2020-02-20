@@ -2,10 +2,14 @@ package com.freak.project.controller;
 
 import com.freak.project.domain.StationByIdDto;
 import com.freak.project.domain.StationByNameDto;
+import com.freak.project.domain.Stations;
 import com.freak.project.domain.StationsDTO;
 import com.freak.project.exception.StationNotFoundException;
+import com.freak.project.exception.UserExistException;
 import com.freak.project.facade.ApiWheaderFacade;
+import com.freak.project.user.NewUserDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
