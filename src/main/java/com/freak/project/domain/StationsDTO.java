@@ -10,51 +10,49 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-//@AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class StationsDTO {
 
     @JsonProperty("id_stacji")
-    private String id_stacji;
+    private String id_station;
 
     @JsonProperty("stacja")
-    private String stacja;
+    private String station;
 
     @JsonProperty("data_pomiaru")
-    private String data_pomiaru;
+    private String date_measure;
 
     @JsonProperty("godzina_pomiaru")
-    private String godzina_pomiaru;
+    private String hour_measure;
 
     @JsonProperty("temperatura")
-    private String temperatura;
+    private String temperature;
 
     @JsonProperty("predkosc_wiatru")
-    private String predkosc_wiatru;
+    private String wind_speed;
 
     @JsonProperty("kierunek_wiatru")
-    private String kierunek_wiatru;
+    private String wind_direction;
 
     @JsonProperty("wilgotnosc_wzgledna")
-    private String wilgotnosc_wzgledna;
+    private String relative_humidity;
 
     @JsonProperty("suma_opadu")
-    private String suma_opadu;
+    private String total_rainfall;
 
     @JsonProperty("cisnienie")
-    private String cisnienie;
+    private String pressure;
 
-    public StationsDTO(String id_stacji, String stacja, String data_pomiaru, String godzina_pomiaru, String temperatura,
-                       String predkosc_wiatru, String kierunek_wiatru, String wilgotnosc_wzgledna, String suma_opadu, String cisnienie) {
-        this.id_stacji = id_stacji;
-        this.stacja = stacja;
-        this.data_pomiaru = data_pomiaru;
-        this.godzina_pomiaru = godzina_pomiaru;
-        this.temperatura = temperatura;
-        this.predkosc_wiatru = predkosc_wiatru;
-        this.kierunek_wiatru = kierunek_wiatru;
-        this.wilgotnosc_wzgledna = wilgotnosc_wzgledna;
-        this.suma_opadu = suma_opadu;
-        this.cisnienie = cisnienie;
+    public StationsDTO(String id_station, String station, String date_measure, String hour_measure, String temperature, String wind_speed, String wind_direction, String relative_humidity, String total_rainfall, String pressure) {
+        this.id_station = id_station;
+        this.station = station;
+        this.date_measure = date_measure;
+        this.hour_measure = hour_measure;
+        this.temperature = temperature;
+        this.wind_speed = wind_speed;
+        this.wind_direction = wind_direction;
+        this.relative_humidity = relative_humidity;
+        this.total_rainfall = total_rainfall;
+        this.pressure = pressure;
     }
 }

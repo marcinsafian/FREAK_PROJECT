@@ -15,32 +15,32 @@ import lombok.Setter;
 public class StationByIdDto {
 
     @JsonProperty("id_stacji")
-    private String id_stacji;
+    private String id_station;
 
     @JsonProperty("stacja")
-    private String stacja;
+    private String station;
 
     @JsonProperty("data_pomiaru")
-    private String data_pomiaru;
+    private String date_measure;
 
     @JsonProperty("godzina_pomiaru")
-    private String godzina_pomiaru;
+    private String hour_measure;
 
     @JsonProperty("temperatura")
-    private String temperatura;
+    private String temperature;
 
     @JsonProperty("predkosc_wiatru")
-    private String predkosc_wiatru;
+    private String wind_speed;
 
     @JsonProperty("kierunek_wiatru")
-    private String kierunek_wiatru;
+    private String wind_direction;
 
     @JsonProperty("wilgotnosc_wzgledna")
-    private String wilgotnosc_wzgledna;
+    private String relative_humidity;
 
     @JsonProperty("suma_opadu")
-    private String suma_opadu;
+    private String total_rainfall;
 
     @JsonProperty("cisnienie")
-    private String cisnienie;
+    private String pressure;
 }

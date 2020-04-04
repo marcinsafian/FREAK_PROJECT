@@ -16,16 +16,16 @@ public class ApiWheaderService {
     public List<StationsDTO> fetchAllStations(){return apiWheaderClient.getStationsURL();}
 
 
-    public List<StationByIdDto> fetchById(String id_stacji){
+    public List<StationByIdDto> fetchById(String id_station){
         return apiWheaderClient.getIdStationsURL()
                 .stream()
-                .filter(c -> c.getId_stacji().equals(id_stacji))
+                .filter(c -> c.getId_station().equals(id_station))
                 .collect(Collectors.toList());
     }
-    public List<StationByNameDto> fetchByName(String stacja){
+    public List<StationByNameDto> fetchByName(String station){
         return apiWheaderClient.getNameStationsURL()
                 .stream()
-                .filter(c -> c.getStacja().equals(stacja))
+                .filter(c -> c.getStation().equals(station))
                 .collect(Collectors.toList());
     }
 }

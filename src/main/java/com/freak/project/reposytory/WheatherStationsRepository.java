@@ -9,9 +9,4 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public interface WheatherStationsRepository extends CrudRepository<WheatherStations, String> {
 
-
-//    Optional<WheatherStations> save(Stations stations);
-  //  List<WheatherStations> save(List<WheatherStations> stations);
-//
-//    Optional<Object> findById(WheatherStations stationsId);
 }

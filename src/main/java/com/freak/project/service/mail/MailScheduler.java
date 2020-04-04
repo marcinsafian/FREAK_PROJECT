@@ -51,15 +51,15 @@ public class MailScheduler {
         mailSentRepository.save(new AllUsersCount(LocalDateTime.now(),userCount,emailCount));
     }
     public Mail prepareMesageToMail(User user) throws UserNotFoundException {
-        Stations stations = (Stations) apiWheaderService.fetchByName("?");
+        Stations stations = (Stations) apiWheaderService.fetchByName(user.getId().toString());
         return new Mail.MailBuild().sendTo(user.getEmail()).subject(SUBJECT)
         .messageLine("\tGood morning, " + user.getFirstName() + "!\n")
                 .messageLine("Are you wondering what the weather is ?")
-                .messageLine(stations.getStacja() + "\n")
-                .messageLine("The weather was updated " + stations.getGodzina_pomiaru())
-                .messageLine("Wind:\t\t\t\t\t   " + stations.getPredkosc_wiatru()+ "m/s " + stations.getKierunek_wiatru())
-                .messageLine("Air temperature:\t\t\t" + stations.getTemperatura() + "\u00B0C")
-                .messageLine("Air pressure:\t\t  " + stations.getCisnienie()+ "MPa")
+                .messageLine(stations.getStation() + "\n")
+                .messageLine("The weather was updated " + stations.getHour_measure())
+                .messageLine("Wind:\t\t\t\t\t   " + stations.getWind_speed()+ "m/s " + stations.getWind_direction())
+                .messageLine("Air temperature:\t\t\t" + stations.getTemperature() + "\u00B0C")
+                .messageLine("Air pressure:\t\t  " + stations.getPressure()+ "MPa")
                 .messageLine("\nHave a nice day!")
                 .build();
     }

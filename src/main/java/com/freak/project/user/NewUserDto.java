@@ -16,5 +16,4 @@ public class NewUserDto {
     private String password;
     private String email;
     private boolean schedulerOn;
-    //private IpAdress ?
 }

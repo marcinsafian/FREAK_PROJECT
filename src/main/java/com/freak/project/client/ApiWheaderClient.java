@@ -23,15 +23,6 @@ import static java.util.Optional.ofNullable;
 public class ApiWheaderClient {
     private static final Logger LOGGER = LoggerFactory.getLogger(ApiWheaderClient.class);
 
-
-    //wstrzykuje beana RestTemplate z CoreConfiguration aby umozliwic wyslanie zapytania HTTP AccuClient
-//    @Autowired
-//    private CoreConfiguration coreConfiguration;
-//    @Value("${imgw.api.endpoint.prod}")
-//    private String apiEndpoint;
-//    @Value("${accuWeather.app.key}")
-//    private String accuAppKey;
-
     @Autowired
     private RestTemplate restTemplate;
 
@@ -40,13 +31,10 @@ public class ApiWheaderClient {
 
 
     private URI urlBuild(){
-        //URI klasa z kilkoma metodami do operowania na adresie https://docs.oracle.com/javase/7/docs/api/java/net/URI.html
         return UriComponentsBuilder.fromHttpUrl(urlConfig.getApiEndpoint()).build().encode().toUri();
     }
 
     public List<StationsDTO> getStationsURL() {
-
-        //restTemplate udostepnia .getForObject
         try{
             StationsDTO[] stationsResponse = restTemplate.getForObject(urlBuild(), StationsDTO[].class);
             return Arrays.asList(ofNullable(stationsResponse).orElse(new StationsDTO[0]));
